@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>薪酬计算器</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script> <!-- 引入 XLSX 库 -->
+</head>
+<body>
+    <h2>薪酬计算器</h2>
+	
+	
+    <div class="clear"></div>
+    <button onclick="addRow()">新增一行</button>
+    <button onclick="downloadExcel()">导出为Excel</button>
+	<button onclick="downloadChart('euroChart', 'Euro_Chart')">导出欧元图表</button>
+	<button onclick="downloadChart('cnyChart', 'CNY_Chart')">导出人民币图表</button>
+    <p></p>
+
+    <div class="tables-and-charts">
+        <div class="tables">
+            <table id="euroTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>工作名称</th>
+                        <th>年薪 (€ 万)</th>
+                        <th>月薪 (€)</th>
+                        <th>租房 (€)</th>
+                        <th>吃饭 (€)</th>
+                        <th>剩余月 (€)</th>
+                        <th>剩余年 (€ 万)</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be added here -->
+                </tbody>
+            </table>
+		</div>
+		
+        <div class="chart-container">
+            <canvas id="euroChart"></canvas>
+        </div>
+	</div>
+	
+	<p></p>
+	
+	<div class="tables-and-charts">
+		<div class="tables">
+            <table id="cnyTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>工作名称</th>
+                        <th>年薪 (￥ 万)</th>
+                        <th>月薪 (￥)</th>
+                        <th>租房 (￥)</th>
+                        <th>吃饭 (￥)</th>
+                        <th>剩余月 (￥)</th>
+                        <th>剩余年 (￥ 万)</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be added here -->
+                </tbody>
+            </table>
+        </div>
+		
+        <div class="chart-container">
+            <canvas id="cnyChart"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
