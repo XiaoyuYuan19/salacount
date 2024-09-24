@@ -79,7 +79,7 @@ h2 {
         justify-content: center;
         align-items: center;
     }
-    .tables, .chart-container {
+    .tables, .chart-container canvas{
         width: 100%;
     }
 }
